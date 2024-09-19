@@ -5,9 +5,9 @@ body {
     box-sizing: border-box;
 }
 
-/* Definir margem para todos os elementos com classe 'col-8' */
-.col-8 {
-    margin-left: auto;
+
+#TabelaPacientes {
+    margin-left: 15px;
     margin-right: auto;
     padding: 15px;
     border-radius: 5px;
@@ -26,6 +26,7 @@ body {
 table {
     margin-top: 20px;
 }
+
 
 
 /* logo no canto superior esquerdo */

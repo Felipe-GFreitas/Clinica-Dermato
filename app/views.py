@@ -4,13 +4,13 @@ from app.models import Pacientes
 from django.core.paginator import Paginator
 
 def home(request):
-    data = {}
-    search = request.GET.get('search')
-    if search:
-        data['db'] = Pacientes.objects.filter(nome__icontains=search) #Coisa do Django esse negocio aqui
-    else:
-        data['db'] = Pacientes.objects.all()
-    return render(request, 'index.html', data)
+    search = request.GET.get('search', '') 
+    pacientes_list = Pacientes.objects.filter(nome__icontains=search) 
+    # Configura a paginação
+    paginator = Paginator(pacientes_list, 10)  
+    page_number = request.GET.get('page') 
+    page_obj = paginator.get_page(page_number) 
+    return render(request, 'index.html', {'db': page_obj, 'search': search})
 
 def formPacientes(request):
     data = {}
