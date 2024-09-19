@@ -1,8 +1,7 @@
 Sistema de Consultas e Agendamento para Clínica de Dermatologia
 Descrição
 
-Este projeto é um sistema de consultas e agendamento para uma clínica de dermatologia. A aplicação permitirá o gerenciamento de consultas, cadastro de pacientes e médicos, e outras funcionalidades relacionadas ao agendamento de consultas.
-Integrantes
+Este projeto é um sistema de consultas e agendamento para uma clínica de dermatologia. A aplicação permitirá o gerenciamento de consultas, cadastro de pacientes e médicos, e outras funcionalidades relacionadas ao agendamento de consultas. Este projeto é desenvolvido para fins acadêmicos como parte dos requisitos de um curso de faculdade.
 
     Felipe Gomes de Freitas
     Felipe Martins Menino
