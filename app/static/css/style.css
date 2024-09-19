@@ -1,0 +1,38 @@
+/* Definir margens no formulário e tabela */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definir margem para todos os elementos com classe 'col-8' */
+.col-8 {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilizar o input de busca */
+#search {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Estilizar a tabela */
+table {
+    margin-top: 20px;
+}
+
+
+/* logo no canto superior esquerdo */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 150px; /* Ajuste o tamanho conforme necessário */
+}
+
