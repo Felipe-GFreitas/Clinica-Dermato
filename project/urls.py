@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from app.views import home,formPacientes, create, view, edit, update,delete
 
+#Essa pasta serve para criar as url
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),

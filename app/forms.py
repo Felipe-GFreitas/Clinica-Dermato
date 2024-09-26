@@ -1,6 +1,8 @@
 from django import forms
 from app.models import Pacientes
 
+#Essa pasta serve para facilitar a criação de formularios
+
 class PacientesForm(forms.ModelForm):
     data_nascimento = forms.DateField(
         widget=forms.DateInput(attrs={'type': 'date'}),  # Campo com seletor de data

@@ -3,6 +3,8 @@ from app.forms import PacientesForm
 from app.models import Pacientes
 from django.core.paginator import Paginator
 
+#Essa pasta basicamente serve para enviar os dados do banco para algum canto
+
 def home(request):
     search = request.GET.get('search', '') 
     pacientes_list = Pacientes.objects.filter(nome__icontains=search) 

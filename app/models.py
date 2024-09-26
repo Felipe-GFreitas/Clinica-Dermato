@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+#Essa pasta serve para criar as tabelas no banco de dados
 class Pacientes(models.Model):
     nome = models.CharField(max_length=30)
     telefone = models.CharField(max_length=30)

@@ -1,17 +1,19 @@
 /* Definir margens no formulário e tabela */
+
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: aqua;
 }
 
 
 #TabelaPacientes {
-    margin-left: 15px;
+    margin-left: 10px;
     margin-right: auto;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    padding: auto;
+    border-radius: 25px;
 }
 
 /* Estilizar o input de busca */
