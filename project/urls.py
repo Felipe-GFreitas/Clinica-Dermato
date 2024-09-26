@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home,formPacientes, create, view, edit, update,delete
+from app.views.pacientes_views import home, formPacientes, create, view, edit, update, delete
 
 #Essa pasta serve para criar as url
 

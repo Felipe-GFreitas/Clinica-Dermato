@@ -12,12 +12,12 @@ def home(request):
     paginator = Paginator(pacientes_list, 10)  
     page_number = request.GET.get('page') 
     page_obj = paginator.get_page(page_number) 
-    return render(request, 'index.html', {'db': page_obj, 'search': search})
+    return render(request, 'Pacientes.html', {'db': page_obj, 'search': search})
 
 def formPacientes(request):
     data = {}
     data['form'] = PacientesForm() 
-    return render(request, 'Pacientes.html', data)
+    return render(request, 'PacientesForms.html', data)
 
 def create(request):
     if request.method == 'POST':
@@ -27,22 +27,21 @@ def create(request):
             return redirect('home')  # Redireciona para a página inicial após salvar
         else:
             # Se o formulário for inválido, renderiza novamente o formulário com erros
-            return render(request, 'Pacientes.html', {'form': form})
+            return render(request, 'PacientesForms.html', {'form': form})
     else:
         form = PacientesForm()
     return redirect('formPacientes')  # Redireciona para o formulário caso a solicitação não seja POST
 
-#Todas as coisas da view
 def view(request, pk):
     data = {}
     data['db'] = Pacientes.objects.get(pk=pk)
-    return render(request, 'view.html', data)
+    return render(request, 'PacientesView.html', data)
 
 def edit(request, pk):
     data = {}
     data['db'] = Pacientes.objects.get(pk=pk)
     data['form'] =PacientesForm(instance= data ['db'])
-    return render(request, 'Pacientes.html', data)
+    return render(request, 'PacientesForms.html', data)
 
 def update(request, pk):
     data = {}

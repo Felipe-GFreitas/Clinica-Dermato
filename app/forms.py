@@ -1,5 +1,6 @@
 from django import forms
 from app.models import Pacientes
+from app.models import Medicos
 
 #Essa pasta serve para facilitar a criação de formularios
 
@@ -12,3 +13,8 @@ class PacientesForm(forms.ModelForm):
     class Meta:
         model = Pacientes
         fields = ['nome', 'telefone', 'cpf', 'email', 'data_nascimento']
+
+class MedicosForm(forms.ModelForm):
+    class Meta:
+        model = Medicos
+        fields = ['nome','crm','especialidade', 'horario']
