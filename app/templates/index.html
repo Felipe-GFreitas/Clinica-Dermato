@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integra Dermatologia </title>
+    <link rel="icon" href="{% static 'imagens/icon.jpg' %}"> 
+</head>
+<body>
+    <a href="{% url 'pacientes'%}" class="btn btn-dark">Pacientes</a>
+    <a href="{% url 'medicos'%}" class="btn btn-dark">Medicos</a>
+
+
+</body>
+</html>

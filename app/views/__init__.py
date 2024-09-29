@@ -1,0 +1,3 @@
+from .pacientes_views import home, pacientes, formPacientes,create_paciente,edit_paciente,update_paciente,delete_paciente,view_paciente
+
+from .medicos_views import medicos,create_medicos,formMedicos,delete_medicos,view_medicos,edit_medicos,update_medicos
