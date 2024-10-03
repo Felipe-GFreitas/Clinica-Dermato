@@ -1,0 +1,96 @@
+/* Estilos globais */
+body {
+    background-color: #9fd5f5;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 150px;
+}
+
+/* Titulo Principal */
+.container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Campo de busca */
+#search {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Tabela */
+#TabelaMedicos {
+    width: 100%;
+}
+
+.table {
+    border: 1px solid #dee2e6;
+}
+
+.table thead {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Paginação */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.pagination .page-item .page-link {
+    color: white;
+}
+
+/* Botão de voltar centralizado */
+.container .btn-outline-secondary {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.medico-view {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.medico-view .header h1 {
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+.medico-view .details-box {
+    background-color: #d3f1fc;
+    border: 1px solid #d3f1fc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #495057;
+}
+
+.medico-view .details-box p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.medico-view .btn-info {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
