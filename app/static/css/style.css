@@ -1,23 +1,21 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: aqua;
+    background-color: #9fd5f5;
 }
 
 
 #TabelaPacientes {
     margin-left: 10px;
-    margin-right: auto;
-    padding: auto;
+    margin-right: 10px;
+    width: 90%;
+    padding: 0;
     border-radius: 25px;
 }
 
 /* Estilizar o input de busca */
 #search {
     margin-top: 20px;
-    padding: 10px;
-    width: 100%;
+    padding: 0%;
+    width: 90%;
     border-radius: 5px;
 }
 

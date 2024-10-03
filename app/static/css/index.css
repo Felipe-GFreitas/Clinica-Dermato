@@ -1,0 +1,53 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9fd5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contêiner principal */
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Título */
+.title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Navegação */
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Botão desativado */
+.disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    background-color: #6c757d;
+}
