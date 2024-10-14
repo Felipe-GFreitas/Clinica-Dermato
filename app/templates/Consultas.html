@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta - Integra Dermatologia</title>
+    <link rel="stylesheet" href="{% static 'css/agendamento.css' %}">
+    <link rel="icon" href="{% static 'imagens/icon.png' %}"> 
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Agendar Consulta</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Renderiza o formulário -->
+            <button type="submit" class="btn">Agendar</button>
+        </form>
+        <a href="{% url 'home' %}" class="btn">Voltar</a>
+    </div>
+</body>
+</html>
