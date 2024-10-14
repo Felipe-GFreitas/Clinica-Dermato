@@ -1,25 +1,27 @@
 from django import forms
-from app.models import Pacientes
-from app.models import Medicos
-
-#Essa pasta serve para facilitar a criação de formularios
+from app.models import Pacientes, Medicos,Consultas
 
 class PacientesForm(forms.ModelForm):
     data_nascimento = forms.DateField(
-        widget=forms.DateInput(attrs={'type': 'date'}),  # Campo com seletor de data
-        input_formats=['%Y-%m-%d', '%d/%m/%Y']  # Adiciona formatos aceitos
+        widget=forms.DateInput(attrs={'type': 'date'}),  # Seletor de data
+        input_formats=['%Y-%m-%d', '%d/%m/%Y']  # Formatos aceitos
     )
+
     class Meta:
         model = Pacientes
         fields = ['nome', 'telefone', 'cpf', 'email', 'data_nascimento']
 
+
 class MedicosForm(forms.ModelForm):
-    ESCOLHA_HORARIOS = [
-        ('manha', 'Manhã'),
-        ('tarde', 'Tarde'),
-        ('integral', 'Integral'),
-    ]
-    horario = forms.ChoiceField(choices=ESCOLHA_HORARIOS, required=True)
     class Meta:
         model = Medicos
-        fields = ['nome','crm','especialidade', 'horario']
+        fields = ['nome', 'crm', 'especialidade', 'horario']  # Retirei a forma de escolha daqui, pq já estou colocando no models
+
+class AgendamentoForm(forms.ModelForm):
+    class Meta:
+        model = Consultas
+        fields = ['paciente', 'medico', 'data_consulta', 'hora_consulta', 'observacoes']
+        widgets = {
+            'data_consulta': forms.DateInput(attrs={'type': 'date'}),
+            'hora_consulta': forms.TimeInput(attrs={'type': 'time'}),
+        }
