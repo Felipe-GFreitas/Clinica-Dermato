@@ -26,4 +26,7 @@ from .consultas_views import (
     agendar_consulta,
     validar_horario_medico,
     verificar_conflito_horario,
+    listar_consultas,
+    alterar_status_consulta
+
 )

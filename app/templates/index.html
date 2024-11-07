@@ -4,18 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integra Dermatologia </title>
+    <title>Integra Dermatologia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="icon" href="{% static 'imagens/icon.png' %}"> 
+    <link rel="icon" href="{% static 'imagens/icon.png' %}">
 </head>
-<body>
-    <div class="container">
-        <h1 class="title">Integra Dermatologia</h1>
-        <div class="nav">
-            <a href="{% url 'pacientes' %}" class="btn">Pacientes</a>
-            <a href="{% url 'medicos' %}" class="btn">Médicos</a>
-            <a href="{% url 'agendar_consulta'%}" class="btn">Marcar Consultas</a>
+<body class="bg-light">
+
+    <header class="position-absolute" style="top: 15px; left: 15px;">
+        <img src="{% static 'imagens/icon.png' %}" alt="Logo" class="img-fluid" style="max-height: 80px;">
+    </header>
+
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+        <h1 class="display-4 text-primary text-center mb-5">Integra Dermatologia</h1>
+
+        <div class="list-group w-50">
+            <a href="{% url 'pacientes' %}" class="list-group-item list-group-item-action text-center">Pacientes</a>
+            <a href="{% url 'medicos' %}" class="list-group-item list-group-item-action text-center">Médicos</a>
+            <a href="{% url 'agendar_consulta' %}" class="list-group-item list-group-item-action text-center">Marcar Consultas</a>
+            <a href="{% url 'listar_consultas' %}" class="list-group-item list-group-item-action text-center">Visualizar Consultas</a>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

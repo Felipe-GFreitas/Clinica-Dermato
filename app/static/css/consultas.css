@@ -1,3 +1,22 @@
-body{
-    background-color: black;
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.table {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead {
+    font-weight: bold;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    text-align: center;
 }

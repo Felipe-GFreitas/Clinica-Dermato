@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas Marcadas</title>
+    <link rel="stylesheet" href="{% static 'css/ConsultasMarcadas.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Consultas Marcadas</h1>
+        
+        <!-- Barra de busca por nome do paciente -->
+        <form method="GET" action="{% url 'listar_consultas' %}" class="mb-4 d-flex">
+            <input type="text" name="search" class="form-control me-2" placeholder="Buscar paciente por nome" value="{{ request.GET.search }}">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+        
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Médico</th>
+                        <th scope="col">Especialidade</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consulta in consultas %}
+                        <tr>
+                            <td>{{ consulta.paciente.nome }}</td>
+                            <td>{{ consulta.medico.nome }}</td>
+                            <td>{{ consulta.medico.especialidade }}</td>
+                            <td>{{ consulta.data_consulta|date:"d/m/Y" }}</td>
+                            <td>{{ consulta.hora_consulta|time:"H:i" }}</td>
+                            <td>
+                                {% if consulta.status == 'agendada' %}
+                                    <span class="badge bg-info text-dark">Agendada</span>
+                                {% elif consulta.status == 'concluida' %}
+                                    <span class="badge bg-success">Concluída</span>
+                                {% elif consulta.status == 'cancelada' %}
+                                    <span class="badge bg-danger">Cancelada</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <form method="POST" action="{% url 'alterar_status_consulta' consulta.id 'concluida' %}" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-success">Concluir</button>
+                                </form>
+                                <form method="POST" action="{% url 'alterar_status_consulta' consulta.id 'cancelada' %}" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-danger">Cancelar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center">Nenhuma consulta encontrada.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

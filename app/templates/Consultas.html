@@ -4,19 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendar Consulta - Integra Dermatologia</title>
-    <link rel="stylesheet" href="{% static 'css/agendamento.css' %}">
+    <title>Agendamento - Integra Dermatologia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/consultas.css' %}">
     <link rel="icon" href="{% static 'imagens/icon.png' %}"> 
 </head>
-<body>
-    <div class="container">
-        <h1 class="title">Agendar Consulta</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}  <!-- Renderiza o formulário -->
-            <button type="submit" class="btn">Agendar</button>
-        </form>
-        <a href="{% url 'home' %}" class="btn">Voltar</a>
+<body class="bg-light">
+    <div class="container mt-5">
+        <!-- Logo -->
+        <a href="{% url 'home' %}">
+            <img src="{% static 'imagens/icon.png' %}" alt="Logo da Clínica" class="logo">
+        </a>
+
+        <!-- Título -->
+        <h1 class="text-center text-primary mb-4">Agendar Consulta</h1>
+
+        <!-- Formulário -->
+        <div class="card mx-auto shadow-lg p-4" style="max-width: 600px;">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Agendar</button>
+                    <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-lg">Voltar</a>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

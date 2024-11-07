@@ -1,5 +1,6 @@
 from django import forms
 from app.models import Pacientes, Medicos,Consultas
+from datetime import time, timedelta, datetime
 
 class PacientesForm(forms.ModelForm):
     data_nascimento = forms.DateField(
@@ -23,5 +24,22 @@ class AgendamentoForm(forms.ModelForm):
         fields = ['paciente', 'medico', 'data_consulta', 'hora_consulta', 'observacoes']
         widgets = {
             'data_consulta': forms.DateInput(attrs={'type': 'date'}),
-            'hora_consulta': forms.TimeInput(attrs={'type': 'time'}),
         }
+
+    hora_consulta = forms.ChoiceField(choices=[], label="Horário da Consulta")
+
+    def __init__(self, *args, **kwargs):
+        super(AgendamentoForm, self).__init__(*args, **kwargs)
+        self.fields['hora_consulta'].choices = self.gerar_opcoes_horarios()
+
+    def gerar_opcoes_horarios(self):
+        horarios = []
+        inicio = datetime.strptime('08:00', '%H:%M')
+        fim = datetime.strptime('18:00', '%H:%M')
+
+        while inicio < fim:
+            proximo = inicio + timedelta(minutes=30)
+            horarios.append((inicio.strftime('%H:%M'), f"{inicio.strftime('%H:%M')} - {proximo.strftime('%H:%M')}"))
+            inicio = proximo
+
+        return horarios

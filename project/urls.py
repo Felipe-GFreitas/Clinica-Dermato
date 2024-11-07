@@ -5,7 +5,7 @@ from app.views import (
     update_paciente, delete_paciente, view_paciente,
     medicos, formMedicos, create_medicos, delete_medicos, 
     view_medicos, edit_medicos, update_medicos,
-    agendar_consulta,
+    agendar_consulta,listar_consultas,alterar_status_consulta
 )
 
 urlpatterns = [
@@ -29,5 +29,7 @@ urlpatterns = [
     path('medicos/delete/<int:pk>/', delete_medicos, name='delete_medicos'),
 
     path('agendar-consulta/', agendar_consulta, name='agendar_consulta'),
+    path('consultas/', listar_consultas, name='listar_consultas'),
+    path('consultas/alterar_status/<int:consulta_id>/<str:novo_status>/', alterar_status_consulta, name='alterar_status_consulta'),
     
 ]
