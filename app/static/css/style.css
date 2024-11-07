@@ -1,36 +1,61 @@
+/* Definir fundo branco */
 body {
-    background-color: #9fd5f5;
+    background-color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-
-#TabelaPacientes {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 90%;
-    padding: 0;
-    border-radius: 25px;
+/* Header com título e logo */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #0066cc;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilizar o input de busca */
-#search {
-    margin-top: 20px;
-    padding: 0%;
-    width: 90%;
-    border-radius: 5px;
-}
-
-/* Estilizar a tabela */
-table {
-    margin-top: 20px;
-}
-
-
-
-/* logo no canto superior esquerdo */
+/* Logo da aplicação */
 .logo {
     position: absolute;
     top: 15px;
     left: 15px;
-    height: 150px; /* Ajuste o tamanho conforme necessário */
+    height: 150px;
 }
 
+/* Título centralizado */
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+}
+
+/* Botões de navegação */
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #005bb5;
+}
