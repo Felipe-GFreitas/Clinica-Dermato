@@ -1,12 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ exame|default:"Novo Exame" }} - Integra Dermatologia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/consultas.css' %}">
+    <link rel="icon" href="{% static 'imagens/icon.png' %}">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <!-- Logo -->
+        <a href="{% url 'home' %}">
+            <img src="{% static 'imagens/icon.png' %}" alt="Logo da Clínica" class="logo">
+        </a>
 
-{% block content %}
-<div class="container">
-    <h1>{{ exame|default:"Novo Exame" }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Salvar</button>
-        <a href="{% url 'listar_exames' %}" class="btn btn-secondary">Voltar</a>
-    </form>
-</div>
-{% endblock %}
+        <!-- Título -->
+        <h1 class="text-center text-primary mb-4">{{ exame|default:"Novo Exame" }}</h1>
+
+        <!-- Card do Formulário -->
+        <div class="card mx-auto shadow-lg p-4" style="max-width: 600px;">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">Salvar</button>
+                    <a href="{% url 'listar_exames' %}" class="btn btn-outline-secondary btn-lg">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
