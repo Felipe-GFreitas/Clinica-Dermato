@@ -1,3 +1,11 @@
+/* Logo */
+.logo {
+    position: absolute !important;
+    top: 15px !important;
+    left: 15px !important;
+    height: 150px !important;
+}
+
 body {
     background-color: #f8f9fa;
 }
@@ -20,3 +28,4 @@ h1 {
     vertical-align: middle;
     text-align: center;
 }
+

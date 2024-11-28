@@ -27,6 +27,13 @@ from .consultas_views import (
     validar_horario_medico,
     verificar_conflito_horario,
     listar_consultas,
-    alterar_status_consulta
+    alterar_status_consulta,
+)
 
+# Importações das views de Exames
+from .exames_views import (
+    listar_exames,
+    criar_exame,
+    editar_exame,
+    excluir_exame,
 )

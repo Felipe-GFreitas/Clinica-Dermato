@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultas Marcadas</title>
-    <link rel="stylesheet" href="{% static 'css/ConsultasMarcadas.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/consultas.css' %}">
 </head>
 <body>
+    <a href="{% url 'home' %}">
+        <img src="{% static 'imagens/icon.png' %}" alt="Logo da Clínica" class="logo">
+    </a>
     <div class="container my-5">
         <h1 class="text-center mb-4">Consultas Marcadas</h1>
-        
+
         <!-- Barra de busca por nome do paciente -->
         <form method="GET" action="{% url 'listar_consultas' %}" class="mb-4 d-flex">
             <input type="text" name="search" class="form-control me-2" placeholder="Buscar paciente por nome" value="{{ request.GET.search }}">

@@ -1,5 +1,5 @@
 from django import forms
-from app.models import Pacientes, Medicos,Consultas
+from app.models import Pacientes, Medicos,Consultas,Exames
 from datetime import time, timedelta, datetime
 
 class PacientesForm(forms.ModelForm):
@@ -19,6 +19,7 @@ class MedicosForm(forms.ModelForm):
         fields = ['nome', 'crm', 'especialidade', 'horario']  # Retirei a forma de escolha daqui, pq já estou colocando no models
 
 class AgendamentoForm(forms.ModelForm):
+
     class Meta:
         model = Consultas
         fields = ['paciente', 'medico', 'data_consulta', 'hora_consulta', 'observacoes']
@@ -43,3 +44,13 @@ class AgendamentoForm(forms.ModelForm):
             inicio = proximo
 
         return horarios
+    
+class ExameForm(forms.ModelForm):
+    class Meta:
+        model = Exames
+        fields = ['paciente', 'consulta', 'tipo_exame', 'data_realizacao', 'status', 'resultados']
+        widgets = {
+            'data_realizacao': forms.DateInput(attrs={'type': 'date'}),
+            'status': forms.Select(attrs={'class': 'form-select'}),
+            'resultados': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        }
