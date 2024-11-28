@@ -1,0 +1,12 @@
+
+{% block content %}
+<div class="container">
+    <h1>{{ exame|default:"Novo Exame" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{% url 'listar_exames' %}" class="btn btn-secondary">Voltar</a>
+    </form>
+</div>
+{% endblock %}

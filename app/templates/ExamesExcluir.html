@@ -1,0 +1,12 @@
+
+{% block content %}
+<div class="container">
+    <h1>Excluir Exame</h1>
+    <p>Tem certeza que deseja excluir o exame "{{ exame.tipo_exame }}" do paciente "{{ exame.paciente.nome }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="{% url 'listar_exames' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
